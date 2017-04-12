@@ -22,7 +22,7 @@ find_dirichlet_prior(lower, upper, ..., size_box = c(0, 10 * n), x0,
 
 \item{local_opts}{local optimization params for nloptr}
 
-\item{n}{scaling parameter, sample size}
+\item{n}{scaling parameter, sample size of the likelihood}
 }
 \description{
 Find a dirichlet prior for box constraints
