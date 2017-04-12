@@ -32,8 +32,8 @@ find_dirichlet_prior <- function(lower, upper, ..., size_box=c(0,10*n), x0, alph
       s <- theta[k]
       x[k] <- 1 - sum(theta[-k])
 
-    list( "objective" = s**2 + alpha**2 * crossprod(x)[1,1],
-          "gradient"  = c(s, alpha* x[-k])
+    list( "objective" = (s**2 + (n*alpha)**2 * crossprod(x)[1,1]) / 2,
+          "gradient"  = c( (n * alpha)**2 * x[-k], s)
     )
   }
 
